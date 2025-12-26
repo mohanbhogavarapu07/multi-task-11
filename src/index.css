@@ -1,96 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core palette - clinical dark theme */
+    --background: 220 20% 4%;
+    --foreground: 210 20% 90%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 20% 6%;
+    --card-foreground: 210 20% 90%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 20% 6%;
+    --popover-foreground: 210 20% 90%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Cyan for visuospatial zone */
+    --primary: 185 70% 50%;
+    --primary-foreground: 220 20% 4%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Amber for semantic zone */
+    --secondary: 40 90% 55%;
+    --secondary-foreground: 220 20% 4%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted - subdued elements */
+    --muted: 220 15% 12%;
+    --muted-foreground: 220 15% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - subtle highlights */
+    --accent: 220 15% 15%;
+    --accent-foreground: 210 20% 90%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Destructive - failure state */
+    --destructive: 0 85% 55%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Success state */
+    --success: 145 70% 45%;
+    --success-foreground: 220 20% 4%;
 
-    --radius: 0.5rem;
+    /* Zone-specific colors */
+    --zone-left: 185 70% 50%;
+    --zone-left-glow: 185 70% 30%;
+    --zone-right: 40 90% 55%;
+    --zone-right-glow: 40 90% 35%;
 
-    --sidebar-background: 0 0% 98%;
+    /* Boundaries and danger */
+    --boundary: 0 0% 25%;
+    --danger: 0 85% 55%;
+    --danger-glow: 0 85% 40%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --border: 220 15% 15%;
+    --input: 220 15% 12%;
+    --ring: 185 70% 50%;
 
-    --sidebar-primary: 240 5.9% 10%;
+    --radius: 0.25rem;
 
-    --sidebar-primary-foreground: 0 0% 98%;
+    /* Fonts */
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-sans: 'Inter', sans-serif;
 
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 220 20% 6%;
+    --sidebar-foreground: 210 20% 90%;
+    --sidebar-primary: 185 70% 50%;
+    --sidebar-primary-foreground: 220 20% 4%;
+    --sidebar-accent: 220 15% 12%;
+    --sidebar-accent-foreground: 210 20% 90%;
+    --sidebar-border: 220 15% 15%;
+    --sidebar-ring: 185 70% 50%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 220 20% 4%;
+    --foreground: 210 20% 90%;
+    --card: 220 20% 6%;
+    --card-foreground: 210 20% 90%;
+    --popover: 220 20% 6%;
+    --popover-foreground: 210 20% 90%;
+    --primary: 185 70% 50%;
+    --primary-foreground: 220 20% 4%;
+    --secondary: 40 90% 55%;
+    --secondary-foreground: 220 20% 4%;
+    --muted: 220 15% 12%;
+    --muted-foreground: 220 15% 50%;
+    --accent: 220 15% 15%;
+    --accent-foreground: 210 20% 90%;
+    --destructive: 0 85% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 15% 15%;
+    --input: 220 15% 12%;
+    --ring: 185 70% 50%;
+    --sidebar-background: 220 20% 6%;
+    --sidebar-foreground: 210 20% 90%;
+    --sidebar-primary: 185 70% 50%;
+    --sidebar-primary-foreground: 220 20% 4%;
+    --sidebar-accent: 220 15% 12%;
+    --sidebar-accent-foreground: 210 20% 90%;
+    --sidebar-border: 220 15% 15%;
+    --sidebar-ring: 185 70% 50%;
   }
 }
 
@@ -100,6 +108,197 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: var(--font-sans);
   }
+
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+@layer components {
+  /* Zone containers */
+  .zone-container {
+    @apply relative overflow-hidden;
+    background: linear-gradient(
+      180deg,
+      hsl(var(--card)) 0%,
+      hsl(var(--background)) 100%
+    );
+  }
+
+  .zone-left {
+    @apply border-r;
+    border-color: hsl(var(--zone-left) / 0.3);
+    box-shadow: inset -1px 0 20px hsl(var(--zone-left-glow) / 0.1);
+  }
+
+  .zone-right {
+    @apply border-l;
+    border-color: hsl(var(--zone-right) / 0.3);
+    box-shadow: inset 1px 0 20px hsl(var(--zone-right-glow) / 0.1);
+  }
+
+  /* Game object */
+  .game-object {
+    @apply absolute rounded-sm transition-none;
+    background: hsl(var(--primary));
+    box-shadow: 
+      0 0 20px hsl(var(--primary) / 0.6),
+      0 0 40px hsl(var(--primary) / 0.3);
+  }
+
+  /* Boundary lines */
+  .boundary-line {
+    @apply absolute w-full;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      hsl(var(--boundary)) 20%,
+      hsl(var(--boundary)) 80%,
+      transparent 100%
+    );
+  }
+
+  .boundary-danger {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      hsl(var(--danger)) 20%,
+      hsl(var(--danger)) 80%,
+      transparent 100%
+    );
+    box-shadow: 0 0 10px hsl(var(--danger-glow) / 0.5);
+  }
+
+  /* Statement card */
+  .statement-card {
+    @apply px-6 py-4 rounded-sm text-center font-mono;
+    background: hsl(var(--muted));
+    border: 1px solid hsl(var(--zone-right) / 0.3);
+  }
+
+  /* Key indicators */
+  .key-indicator {
+    @apply inline-flex items-center justify-center px-3 py-1.5 rounded-sm font-mono text-sm font-semibold;
+    background: hsl(var(--muted));
+    border: 1px solid hsl(var(--border));
+    min-width: 40px;
+  }
+
+  .key-indicator-true {
+    border-color: hsl(var(--success) / 0.5);
+    color: hsl(var(--success));
+  }
+
+  .key-indicator-false {
+    border-color: hsl(var(--destructive) / 0.5);
+    color: hsl(var(--destructive));
+  }
+
+  /* Timer bar */
+  .timer-bar {
+    @apply h-1 rounded-full transition-all;
+    background: hsl(var(--secondary));
+  }
+
+  .timer-bar-urgent {
+    background: hsl(var(--destructive));
+    animation: pulse-urgent 0.3s ease-in-out infinite;
+  }
+
+  /* Clinical display */
+  .clinical-display {
+    @apply font-mono text-xs uppercase tracking-widest;
+    color: hsl(var(--muted-foreground));
+  }
+
+  .clinical-value {
+    @apply font-mono font-semibold tabular-nums;
+    color: hsl(var(--foreground));
+  }
+
+  /* Level indicator */
+  .level-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-sm font-mono text-sm font-bold;
+    background: hsl(var(--muted));
+    border: 1px solid hsl(var(--primary) / 0.5);
+    color: hsl(var(--primary));
+  }
+
+  /* Failure overlay */
+  .failure-overlay {
+    @apply fixed inset-0 flex items-center justify-center z-50;
+    background: hsl(var(--background) / 0.95);
+    animation: failure-flash 0.15s ease-out;
+  }
+
+  /* Result screen */
+  .result-metric {
+    @apply flex justify-between items-center py-3 border-b;
+    border-color: hsl(var(--border));
+  }
+
+  .result-metric:last-child {
+    @apply border-b-0;
+  }
+}
+
+@layer utilities {
+  .text-zone-left {
+    color: hsl(var(--zone-left));
+  }
+
+  .text-zone-right {
+    color: hsl(var(--zone-right));
+  }
+
+  .text-success {
+    color: hsl(var(--success));
+  }
+
+  .text-danger {
+    color: hsl(var(--danger));
+  }
+
+  .bg-zone-left {
+    background-color: hsl(var(--zone-left));
+  }
+
+  .bg-zone-right {
+    background-color: hsl(var(--zone-right));
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.4);
+  }
+
+  .glow-danger {
+    box-shadow: 0 0 20px hsl(var(--danger) / 0.4);
+  }
+}
+
+@keyframes pulse-urgent {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes failure-flash {
+  0% { 
+    background: hsl(var(--destructive) / 0.3);
+  }
+  100% { 
+    background: hsl(var(--background) / 0.95);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
 }
